@@ -20,8 +20,12 @@ def simple_unet(pretrained=True, **kwargs):
     model = UNet(out_channels=2).eval()
     if pretrained:
         state_dict = torch.hub.load_state_dict_from_url(
-            url="https://dl.fbaipublicfiles.com/dino/dino_deitsmall16_pretrain/dino_deitsmall16_pretrain.pth",
+            url="https://github.com/greeneggsandyaml/uss/releases/download/v0.0.1/12pnucjb-step-9999.pth",
             map_location="cpu",
         )
         model.load_state_dict(state_dict, strict=True)
     return model
+
+
+if __name__ == "__main__":
+    simple_unet()
